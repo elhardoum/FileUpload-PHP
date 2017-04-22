@@ -18,26 +18,24 @@ $FileUpload = \FileUpload::instance();
 $FileUpload->setFile($_FILES['avatar']); // or from constructor (new \FileUpload($_FILES['avatar']))
 
 // set target directory
-$FileUpload->setUploadDir('/home/samuel/tests/FileUpload-PHP/avatars');
+    ->setUploadDir('/home/samuel/tests/FileUpload-PHP/avatars')
 
 // set a maximum size to be uploaded (in bytes)
-$FileUpload->setMaxSize(5000000); // 5 MB
+    ->setMaxSize(5000000) // 5 MB
 
 // set extensions to allow
-$FileUpload->setExtensions(array('png', 'jpg', 'jpeg')); // or just 'gif' to allow only GIFs
+    ->setExtensions(array('png', 'jpg', 'jpeg')) // or just 'gif' to allow only GIFs
 
 // always set a unique name for the uploaded file
-$FileUpload->setNewFileName('avatar'); // the extension will be adopted from file extension
+    ->setNewFileName('avatar') // the extension will be adopted from file extension
 
 // upload
-$response = $FileUpload->upload();
+    ->upload();
 
-// debug response
-print_r( $response ); // array('success' => true ...)
-
-if ( $response['success'] ) {
+if ( $FileUpload->successful() ) {
     printf('File uploaded to %s', $FileUpload->path);
 } else {
-    print $response['message'];
+    // debug error message
+    print $FileUpload->last_message['message'];
 }
 ```

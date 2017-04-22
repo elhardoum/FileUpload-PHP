@@ -295,4 +295,12 @@ class FileUpload
             return false;
         }
     }
+
+    /**
+      * Check if upload was handled successfully
+      */
+    public function successful()
+    {
+        return (bool) $this->upload_success;
+    }
 }
