@@ -32,14 +32,8 @@ class FileUpload
     }
 
     public static function instance() {
-        static $instance = null;
-        
-        if ( null === $instance ) {
-            $instance = new FileUpload;
-            // $instance->setup();
-        }
-
-        return $instance;
+        // return fresh instance to avoid conflicts with previous uses
+        return new FileUpload;
     }
 
     /**
