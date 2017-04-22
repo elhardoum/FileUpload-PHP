@@ -15,7 +15,7 @@ if ( !class_exists('\FileUpload') ) {
 $FileUpload = \FileUpload::instance();
 
 // set a file to upload (from `$_FILES`):
-$FileUpload->setFile($_FILES['avatar']); // or from constructor (new \FileUpload($_FILES['avatar']))
+$FileUpload->setFile($_FILES['avatar']) // or from constructor (new \FileUpload($_FILES['avatar']))
 
 // set target directory
     ->setUploadDir('/home/samuel/tests/FileUpload-PHP/avatars')
