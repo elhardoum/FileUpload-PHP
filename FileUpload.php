@@ -128,7 +128,7 @@ class FileUpload
         }
 
         if ( $this->process() ) {
-            return $this->success('File uploaded successfully!', array('name' => 2));
+            return $this->success('File uploaded successfully!');
         } else {
             return $this->error('Could not process file.');            
         }
