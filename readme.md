@@ -20,8 +20,8 @@ $FileUpload->setFile($_FILES['avatar']) // or from constructor (new \FileUpload(
     // set target directory
     ->setUploadDir('/home/samuel/tests/FileUpload-PHP/avatars')
 
-    // set a maximum size to be uploaded (in bytes)
-    ->setMaxSize(5000000) // 5 MB
+    // set a maximum size to be uploaded (in MB)
+    ->setMaxSizeMB(5) // 5 MB, use setMaxSize method to pass in byte values
 
     // set extensions to allow
     ->setExtensions(array('png', 'jpg', 'jpeg')) // or just 'gif' to allow only GIFs

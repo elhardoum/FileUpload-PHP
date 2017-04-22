@@ -55,9 +55,9 @@ class FileUpload
     }
 
     /**
-      * Set max upload size to allow per bytes
+      * Set max upload size to allow in bytes
       *
-      * @param $maxSize int size to allow
+      * @param $maxSize int size to allow in bytes
       */
     public function setMaxSize($maxSize)
     {
@@ -69,6 +69,18 @@ class FileUpload
     public function getMaxSize()
     {
         return $this->max_size;
+    }
+
+    /**
+      * Just like setMaxSizeSet method, but allows you to pass-in size in MegaBytes
+      *
+      * @param $maxSize int size to allow in MB
+      */
+    public function setMaxSizeMB($maxSize)
+    {
+        $this->max_size = (int) $maxSize * 1048576;
+
+        return $this;
     }
 
     /**
